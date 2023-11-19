@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="classes/drawable-object.class.js"></script>
+    <script src="classes/movable-object.class.js"></script>
+    <script src="classes/throwable-object.class.js"></script>
+    <script src="classes/character.class.js"></script>
+    <script src="classes/chicken.class.js"></script>  
+    <script src="classes/chick.class.js"></script>
+    <script src="classes/cloud.class.js"></script>
+    <script src="classes/coin.class.js"></script>
+    <script src="classes/bottle.class.js"></script>
+    <script src="classes/background-object.class.js"></script>
+    <script src="classes/status-bar-health.class.js"></script>
+    <script src="classes/status-bar-coin.class.js"></script>
+    <script src="classes/status-bar-bottle.class.js"></script>
+    <script src="classes/status-bar-endboss.class.js"></script>
+    <script src="classes/world.class.js"></script>
+    <script src="classes/keyboard.class.js"></script>
+    <script src="classes/level.class.js"></script>
+    <script src="classes/endboss.class.js"></script>
+    <script src="levels/level.js"></script>
+    <script src="js/game.js"></script>
+</head>
+<body onload="mobileGame()">
+    <img id="start-img" class="start-img" src="img/9_intro_outro_screens/start/startscreen_1.png">
+    <button id="start-btn" class="start-btn" onclick="startGame()">play game</button>
+
+    <img id="game-over-img" class="game-over-img d-none" src="img/9_intro_outro_screens/game_over/game over.png">
+    <button id="game-over-btn" class="game-over-btn d-none" onclick="playAgain()">play again</button>
+
+    <img id="you-lost-img" class="you-lost-img d-none" src="img/9_intro_outro_screens/game_over/you lost.png">
+    <button id="you-lost-btn" class="you-lost-btn d-none" onclick="startAgain()">play again</button>
+
+    <h1>El Pollo Loco</h1>
+
+    <div id="game-container" class="game-container">
+        <canvas id="canvas" width="720" height="480"></canvas>
+        <img onclick="changeScreen()" id="fullscreen-img" class="fullscreen-img d-none" src="img/fullscreen.png" alt="fullscreen icon">
+        <img onclick="changeScreen()" id="delete-img" class="delete-img d-none" src="img/delete.png" alt="x-icon">
+        <img onclick="toggleSound()" id="sound-img" class="sound-img" src="img/mute.png" alt="sound icon">
+    
+        <div id="mobile-gaming" class="mobile-gaming d-none">
+            <div class="left-container">
+                <button id="left" class="mobile-gaming-btn">
+                    <img class="mobile-gaming-icons" src="img/arrow-left.png" alt="arrow-left icon">
+                </button>
+                <button id="right" class="mobile-gaming-btn">
+                    <img class="mobile-gaming-icons" src="img/arrow-right.png" alt="arrow-right icon">
+                </button>
+            </div>
+            <div class="right-container">
+                <button id="jump" class="mobile-gaming-btn">
+                    <img class="mobile-gaming-icons" src="img/arrow-up.png" alt="arrow-up icon">
+                </button>
+                <button id="throw" class="mobile-gaming-btn">
+                    <img class="mobile-gaming-icons" src="img/arrow-throw.png" alt="arrow-throw icon">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="legend" class="legend d-none">
+        <p>arrows left and right = walk</p>
+        <p>spacebar  = jump</p>
+        <p>D = throw bottle</p>
+    </div>
+
+    <div id="rotate-container" class="rotate-container d-none">
+        <p class="rotate-content">Please turn your device to horizontal for a better playability.</p>
+    </div>
+</body>
+</html>
